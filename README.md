@@ -2,7 +2,7 @@
 
 ## Purpose
 
-After running the __juce_install__ script in a console window, JUCE is installed (or updated in case of a new JUCE version) globally on your Mac in the /opt/local/libexec folder.
+After running the __juce_install__ script in a console window, JUCE is installed (or updated in case of a new JUCE version) globally on your Mac in the __/opt/local/libexec__ folder.
 Then you can access JUCE in CMakeLists.txt with 
 
 <code>find_package (JUCE CONFIG REQUIRED PATHS "/opt/local/libexec")</code>
