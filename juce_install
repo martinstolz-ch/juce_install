@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+remove_juce_directory() {
+    cd ~/Downloads || exit
+    if [ -d "./JUCE" ]; then
+        rm -rf "./JUCE"
+    fi
+}
+
+remove_juce_directory
+
+git clone https://github.com/juce-framework/JUCE.git
+
+# prepare install configuration
+cd JUCE || exit
+cmake -B cmake-build-install -DCMAKE_INSTALL_PREFIX=/opt/local/libexec/JUCE
+
+# install
+sudo cmake --build cmake-build-install --target install
+
+# cleanup
+remove_juce_directory
