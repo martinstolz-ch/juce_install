@@ -11,7 +11,7 @@ Place this script under
 
     /opt/local/bin/juce_install (without file extension)
 
-and make it accessible with
+and make it runnable with
 
     sudo chmod +x /opt/local/bin/juce_install
 
