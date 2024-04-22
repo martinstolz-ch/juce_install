@@ -17,3 +17,5 @@ and make it executable with
 so you can use it from anywhere with the console command
 
     juce_install
+
+> __Be aware: This script was created quickly without much testing. There is no guarantee and you should know what you are doing and use the script on your own responsibility and risk!__
