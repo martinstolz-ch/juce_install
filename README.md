@@ -5,13 +5,12 @@ Then you can find JUCE in CMakeLists.txt with
 
     find_package (JUCE CONFIG REQUIRED PATHS "/opt/local/libexec")
 
-to use it in your C++ app. 
-As a prerequisite, git and cmake must be installed.
+to use it in your C++ app. As a prerequisite, git and cmake must be installed.
 Place this script under
 
     /opt/local/bin/juce_install (without file extension)
 
-and make it runnable with
+and make it executable with
 
     sudo chmod +x /opt/local/bin/juce_install
 
