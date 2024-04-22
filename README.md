@@ -1,22 +1,35 @@
 # JUCE package install and update script for cmake
 
-After running this script in the console, JUCE is installed (or updated in case of a new JUCE version) globally on your Mac in the /opt/local/libexec folder.
-Then you can access JUCE in CMakeLists.txt with
+## Purpose
 
-    find_package (JUCE CONFIG REQUIRED PATHS "/opt/local/libexec")
+After running the __juce_install__ script in a console window, JUCE is installed (or updated in case of a new JUCE version) globally on your Mac in the /opt/local/libexec folder.
+Then you can access JUCE in CMakeLists.txt with 
 
-to use it in your C++ app. As a prerequisite, git and cmake must be installed.
-Place this script under
+<code>find_package (JUCE CONFIG REQUIRED PATHS "/opt/local/libexec")</code>
 
-    /opt/local/bin/juce_install (without file extension)
+to use it in your C++ app. 
 
-and make it executable with
+The target path __/opt/local/libexec__ can be changed from within the script by changing the variable __juce_install_dir__
 
-    sudo chmod +x /opt/local/bin/juce_install
+## Install the script
 
-so you can use it from anywhere with the console command
+1. Make sure that __git__ and __cmake__ are installed on your Mac.
+2. Change to the directory (cd ...) you want the script to be installed.
+3. Open a console window and clone THIS repository
 
-    juce_install
+<code>git clone https://github.com/martinstolz-ch/juce_install_script.git</code>
+
+4. Change to the juce_install_script directory
+
+<code>cd juce_install_script</code>
+
+5. Make the script executable
+
+<code>sudo chmod +x juce_install</code>
+
+6. Run the script in the console
+
+<code>juce_install</code>
 
 
 > __Be aware: This script was created quickly without much testing. There is no guarantee and you should know what you are doing and use the script on your own responsibility and risk!__
