@@ -14,7 +14,7 @@ The target path __/opt/local/libexec__ can be changed from within the script by 
 ## Install the script
 
 1. Make sure that __git__ and __cmake__ are installed on your Mac.
-2. Change to the directory (cd ...) you want the script to be installed.
+2. Change to the directory (cd ...) where you want the script to be installed.
 3. Open a console window and clone THIS repository
 
 <code>git clone https://github.com/martinstolz-ch/juce_install_script.git</code>
