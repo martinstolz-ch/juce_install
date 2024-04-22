@@ -1,4 +1,4 @@
-# JUCE install and update script for cmake
+# JUCE package install and update script for cmake
 
 After running this script in the console, JUCE is installed (or updated in case of a new JUCE version) globally on your Mac in the /opt/local/libexec folder.
 Then you can access JUCE in CMakeLists.txt with
