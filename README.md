@@ -9,7 +9,7 @@ to use it in your C++ app.
 As a prerequisite, git and cmake must be installed.
 Place this script under
 
-    /opt/local/bin/juce_install (ohne file extension)
+    /opt/local/bin/juce_install (without file extension)
 
 and make it accessible with
 
