@@ -1,4 +1,4 @@
-# JUCE package install and update script for cmake
+# JUCE package install / update script for cmake
 
 ## Purpose
 
