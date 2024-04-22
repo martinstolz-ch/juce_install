@@ -15,4 +15,6 @@ and make it accessible with
 
     sudo chmod +x /opt/local/bin/juce_install
 
-directly in the console.
+so you can use it from anywhere with the console command
+
+    juce_install
