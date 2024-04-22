@@ -1,42 +1,42 @@
 #!/bin/zsh
 
-check_git_installed() {
-    if ! command -v git &>/dev/null; then
-        echo "git is not installed. Please install git before continuing."
+set -euo pipefail
+
+check_dependency_installed() {
+    local dep=$1
+    if ! command -v "$dep" &>/dev/null; then
+        echo "$dep is not installed. Please install $dep before continuing."
         exit 1
     fi
 }
 
-check_cmake_installed() {
-    if ! command -v cmake &>/dev/null; then
-        echo "cmake is not installed. Please install cmake before continuing."
-        exit 1
-    fi
-}
-
-remove_juce_directory() {
-    cd ~/Downloads || exit 1
+remove_juce_clone_directory() {
+    cd "${clone_dir}" || exit 1
     if [ -d "./JUCE" ]; then
         rm -rf "./JUCE"
     fi
 }
 
+# config
+clone_dir="${HOME}/Downloads"
+juce_git_url="https://github.com/juce-framework/JUCE.git"
+juce_install_dir="/opt/local/libexec/JUCE"
+
 # prepare
-check_git_installed
-check_cmake_installed
-remove_juce_directory
+check_dependency_installed git
+check_dependency_installed cmake
+remove_juce_clone_directory
 
 # clone JUCE from github
-cd ~/Downloads || exit 1
-git clone https://github.com/juce-framework/JUCE.git
+git clone "${juce_git_url}" "${clone_dir}/JUCE"
 
 # prepare install configuration
-cd JUCE || exit 1
-cmake -B cmake-build-install -DCMAKE_INSTALL_PREFIX=/opt/local/libexec/JUCE
+cd "${clone_dir}/JUCE" || exit 1
+cmake -B cmake-build-install -DCMAKE_INSTALL_PREFIX="${juce_install_dir}"
 
 # install
 sudo cmake --build cmake-build-install --target install
 
 # cleanup
-remove_juce_directory
+remove_juce_clone_directory
 cd ~
